@@ -20,7 +20,7 @@ public class EmployeeServlet extends HttpServlet {
          "SELECT * FROM EMPLOYEES WHERE EmployeeID = ?";
    static final String QUERY = "SELECT EmployeeId, FirstName, LastName FROM EMPLOYEES";
    
-   static final String URL = "jdbc:sqlserver://localhost:1433;databasename=TEST;integratedSecurity=true;TrustServerCertificate=true;";
+   static final String URL = "jdbc:sqlserver://localhost:1433;databasename=Library;integratedSecurity=true;TrustServerCertificate=true;";
 	private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	
 	//private String driver = "com.mysql.cj.jdbc.Driver";
@@ -111,7 +111,7 @@ public class EmployeeServlet extends HttpServlet {
          }
 
          // Link to home
-         pw.println("<h3><a href='input.html'>Home</a></h3>");
+         pw.println("<h3><a href='index.html'>Home</a></h3>");
          // close stream
          pw.close();
       }

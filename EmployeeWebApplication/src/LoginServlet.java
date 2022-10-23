@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -8,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public TestServlet() {
+    public LoginServlet() {
+        super();
         // TODO Auto-generated constructor stub
-    	
     }
 
 	/**
@@ -33,15 +35,24 @@ public class TestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-		// doGet(request, response);
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.print("Welcome to form page ");
+		//doGet(request, response);
+		
+		{
+			PrintWriter pw=res.getWriter();
+			res.setContentType("text/html");
 
-		out.close();
+			String user=req.getParameter("userName");
+			String pass=req.getParameter("userPassword");
+
+			if(user.equals("java4s")&&pass.equals("java4s")) 
+	                 pw.println("Login Success...!"); 
+	                else
+	                 pw.println("Login Failed...!");
+			 pw.close();
+
+		}
 	}
 
 }

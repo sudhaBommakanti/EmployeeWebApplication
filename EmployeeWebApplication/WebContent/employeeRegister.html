@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee Register form</title>
+<style>
+.form-container {
+	margin: 3% auto;
+	display: block;
+	width: 500px;
+	text-align: center;
+}
+
+body {
+	margin: 0 auto;
+	font-family: Arial;
+	background-color: #f8f8f8;
+	color: black;
+}
+
+.form-container input {
+	margin-bottom: 12px;
+}
+
+.form-container .inputButton {
+	background-color: pink;
+	margin-right: 0 auto;
+	margin-left: 4.9rem;
+	position: relative;
+	align-items: center;
+	display: flex;
+}
+</style>
+</head>
+<body>
+	<div class="form-container">
+		<h1
+			style="color: #0B3A38; position: relative; display: flex; justify-content: center;">Employee
+			Register Form</h1>
+		<form action="register" method="post">
+			<table>
+				<tr>
+					<td><font face="verdana" size="2px">FirstName:</font></td>
+					<td><input type="text" name="firstName"></td>
+				</tr>
+				<tr>
+					<td><font face="verdana" size="2px">LastName:</font></td>
+					<td><input type="text" name="lastName"></td>
+				</tr>
+				<tr>
+					<td><font face="verdana" size="2px">Salary:</font></td>
+					<td><input type="text" name="salary"></td>
+				</tr>
+
+				<tr>
+					<td><font face="verdana" size="2px">IsCEO:</font> <label>
+							<input type="radio" name="isCEO" id="" value="True">Yes
+					</label></td>
+
+					<td><label> <input type="radio" name="isCEO"
+							id="" value="False">No
+					</label></td>
+				</tr>
+
+				<tr>
+					<td><font face="verdana" size="2px">IsManager:</font> <label>
+							<input type="radio" name="isManager" id=""
+							value="True">Yes
+					</label></td>
+
+					<td><label> <input type="radio" name="isManager"
+							id="" value="False">No
+					</label></td>
+				</tr>
+				<tr>
+					<td><font face="verdana" size="2px">ManagerId:</font></td>
+					<td><input type="text" name="managerId"></td>
+				</tr>
+			</table>
+
+			<input class="inputButton" type="submit" value="Register"> <input
+				class="inputButton" type="reset" value="Cancel">
+		</form>
+	</div>
+</body>
+</html>

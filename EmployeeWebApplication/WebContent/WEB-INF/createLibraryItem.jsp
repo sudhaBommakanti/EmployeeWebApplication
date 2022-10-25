@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@ body {
 	background-color: #f8f8f8;
 	margin: 0 auto;
 	font-family: Arial;
-	font-size: 14px;
+	font-size:14px;
 	color: black;
 }
 
@@ -84,6 +86,7 @@ li.dropdown {
 	align-items: center;
 	display: flex;
 }
+
 </style>
 </head>
 <body>
@@ -105,12 +108,12 @@ li.dropdown {
 
 	<div class="container">
 		<div class="form-container">
-			<div class="headerDiv">
-				<h1 class="headerClass"
-					style="color: #0B3A38; position: relative; display: flex; justify-content: center;">Fill
-					the form to create a library item</h1>
-			</div>
-			<form action="create-libraryItem" method="post">
+		<div class="headerDiv">
+			<h1 class="headerClass"
+			style="color: #0B3A38; position: relative; display: flex; justify-content: center;">Fill
+			the form to create a library item</h1>
+		</div>
+		  <form action="create-libraryItem" method="post">
 				<table>
 					<tr>
 						<td><font face="verdana" size="2px">Title:</font></td>
@@ -124,7 +127,23 @@ li.dropdown {
 						<td><font face="verdana" size="2px">Pages:</font></td>
 						<td><input type="text" name="pages"></td>
 					</tr>
-
+					<tr>
+					<td><font face="verdana" size="2px">Category Name:</font></td>
+					<td>
+							<select name="types" id="types">
+								<option value="Book">Book</option>
+								<option value="Reference">Reference Book</option>
+								<option value="DVD">DVD</option>
+								<option value="Audio">Audio Book</option>
+							</select>
+						</td>
+						</tr>
+						
+					<tr>
+						<td><font face="verdana" size="2px">Category Name:</font></td>
+						<td><input type="text" name="catName"></td>
+					</tr>
+						
 					<tr>
 						<td><font face="verdana" size="2px">RunTimeMinutes:</font></td>
 						<td><input type="text" name="runTimeMinutes"></td>
@@ -146,14 +165,9 @@ li.dropdown {
 					</tr>
 					<tr>
 						<td><font face="verdana" size="2px">BorrowDate:</font></td>
-						<td><input type="date" name="borrowDate" value="2018-07-22" /></td>
+						<td><input type="date" name="borrowDate" value="2018-07-22"/></td>
 					</tr>
 
-					<tr>
-						<td><font face="verdana" size="2px">Category Name:</font></td>
-						<td><input type="text" name="catName"></td>
-					</tr>
-					
 					<tr>
 						<td><font face="verdana" size="2px">Type:</font></td>
 						<td><select name="types" id="types">
@@ -162,12 +176,13 @@ li.dropdown {
 								<option value="DVD">DVD</option>
 								<option value="Audio">Audio Book</option>
 						</select></td>
-					</tr> 
+					</tr>
 
 				</table>
 
-				<input class="inputButton" type="submit" value="Create"> <input
-					class="inputButton" type="reset" value="Cancel" onclick="home.html" />
+				<input class="inputButton" type="submit" value="Create"> 
+				
+				<input class="inputButton" type="reset" value="Cancel" onclick="home.html"/>
 			</form>
 		</div>
 	</div>

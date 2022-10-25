@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Create Category Item</title>
+<meta charset="ISO-8859-1">
+<title>Create Category</title>
 <style>
 body {
 	background-color: #f8f8f8;
@@ -86,13 +88,13 @@ li.dropdown {
 </style>
 </head>
 <body>
-
+	
 	<ul>
 		<li><a href="login.html">Home</a></li>
 		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Create</a>
 			<div class="dropdown-content">
-				<a href="createLibraryItem.html">Library Item</a> <a
-					href="createCategoryItem.html">Category Item</a>
+				<a href="createLibraryItem.html">Library Item</a> 
+				<a href="createCategoryItem.html">Category Item</a>
 			</div></li>
 		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">View</a>
 			<div class="dropdown-content">
@@ -101,20 +103,13 @@ li.dropdown {
 			</div></li>
 		<li style="float: right"><a href="login.html">Logout</a></li>
 	</ul>
-
-	<div class="container">
-		<h1 style="color:#0B3A38; position: relative;display: flex;justify-content: center;">Fill the form to create a category item</h1>
-		<div class="form-container">
-		<form action="create-category" method="post">
-			
-			Category Name: <input type="text" name="categoryName" /><br> 
-			<input type="submit" value="Create Category">
-			
-			
-			
-<!-- 			<input class="inputButton" type="button" value="Cancel" onclick="home.html"/> -->
-		</form>
+	
+	<div>
+		
+		<p style="margin-left: 15px">${result}</p>
+	
 	</div>
-	</div>
+	
+	
 </body>
 </html>

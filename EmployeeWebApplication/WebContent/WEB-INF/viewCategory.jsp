@@ -118,7 +118,7 @@ ul.data {
 	</div>
 
 
-	<table border="2">
+	<table border="2" width="60%">
 
 		<tr>
 			<th>#</th>
@@ -126,38 +126,22 @@ ul.data {
 
 		</tr>
 
-
 		<%
-		 
-		int i = 1; 
-		ArrayList<String> list = (ArrayList) request.getAttribute("categorynames"); 
+			int i = 1;
+			ArrayList<String> list = (ArrayList) request.getAttribute("categorynames");
 		%>
 
-		<% 
-		for (String u : list) { 
+		<%
+			for (String u : list) {
 		%>
 		<tr>
 			<td><%=i++%></td>
 			<td><%=u%></td>
-
 		</tr>
-		<% 
-		} 
-%>
-
-
-
+		<%
+			}
+		%>
 	</table>
 
-
-	<!-- 	
-	
-	<script>
-		var ul = document.getElementById("data");
-		var items = ul.getElementsByTagName("li");
-		for (var i = 0; i < items.length; ++i) {
-		   items.get(i)
-		}
-	</script> -->
 </body>
 </html>

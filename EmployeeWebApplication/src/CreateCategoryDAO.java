@@ -10,7 +10,7 @@ public class CreateCategoryDAO {
 	private static String userName = "";
 	private static String password = "";
 
-	public static boolean validate(String categoryName) {
+	public static boolean validate(String categoryName) throws Exception {
 		boolean status = false;
 		try {
 			Class.forName(driver);
@@ -32,6 +32,7 @@ public class CreateCategoryDAO {
 
 		} catch (Exception e) {
 			System.out.println(e);
+			throw(e);
 		}
 		return status;
 	}

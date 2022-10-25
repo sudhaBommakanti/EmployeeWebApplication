@@ -100,7 +100,7 @@ table, th, td {
 
 <%@page import="java.util.List"%>  
 <%@page import="java.util.ArrayList"%> 
-<%@page import="com.dao.LibraryList"%> 
+<%@page import="com.model.LibraryList"%> 
 <%@page import="java.util.Iterator"%>
 
 	<ul>

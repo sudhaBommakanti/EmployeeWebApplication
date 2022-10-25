@@ -3,10 +3,10 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	<display-name>EmployeeWebApplication</display-name>
+	<display-name>LibraryManagementSystem</display-name>
 	<servlet>
 		<servlet-name>Login</servlet-name>
-		<servlet-class>FirstServlet</servlet-class>
+		<servlet-class>servlets.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
@@ -14,31 +14,16 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Welcome</servlet-name>
-		<servlet-class>WelcomeServlet</servlet-class>
+		<servlet-class>servlets.WelcomeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Welcome</servlet-name>
 		<url-pattern>/servlet2</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>MyHttpTestServlet</servlet-name>
-		<servlet-class>TestServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MyHttpTestServlet</servlet-name>
-		<url-pattern>/welcome</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Employee</servlet-name>
-		<servlet-class>EmployeeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Employee</servlet-name>
-		<url-pattern>/employee-details</url-pattern>
-	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>CreateCategory</servlet-name>
-		<servlet-class>CreateCategoryServlet</servlet-class>
+		<servlet-class>servlets.CreateCategoryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateCategory</servlet-name>
@@ -46,7 +31,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>RegisterEmployee</servlet-name>
-		<servlet-class>RegisterEmployeeServlet</servlet-class>
+		<servlet-class>servlets.RegisterEmployeeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RegisterEmployee</servlet-name>
@@ -54,7 +39,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>CreateLibrary</servlet-name>
-		<servlet-class>CreateLibraryServlet</servlet-class>
+		<servlet-class>servlets.CreateLibraryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateLibrary</servlet-name>
@@ -63,7 +48,7 @@
 	
 	<servlet>
 		<servlet-name>ViewCategories</servlet-name>
-		<servlet-class>ViewCategoryServlet</servlet-class>
+		<servlet-class>servlets.ViewCategoryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ViewCategories</servlet-name>

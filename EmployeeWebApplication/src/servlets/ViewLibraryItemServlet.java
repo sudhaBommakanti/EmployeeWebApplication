@@ -25,14 +25,14 @@ import com.model.LibraryList;
 public class ViewLibraryItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private static final String SELECT_LIBRARY_NAMESQUERY = "SELECT Title, Author FROM LIBRARYITEM";
+	private static final String SELECT_LIBRARY_NAMESQUERY = "SELECT DISTINCT Title, Author FROM LIBRARYITEM";
 
 	static final String URL = "jdbc:sqlserver://localhost:1433;databasename=Library;integratedSecurity=true;TrustServerCertificate=true;";
 	private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static String userName = "";
 	private static String password = "";
 	
-	List<LibraryList> libraryItems = new ArrayList<LibraryList>();
+	List<LibraryList> libraryItems;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -49,6 +49,8 @@ public class ViewLibraryItemServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		libraryItems = new ArrayList<LibraryList>();
+		
 		LibraryList list;
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -62,6 +64,7 @@ public class ViewLibraryItemServlet extends HttpServlet {
 			ps = con.prepareStatement(SELECT_LIBRARY_NAMESQUERY);
 
 			rs = ps.executeQuery();
+			
 			
 			while (rs.next()) {
 				// Just get the value of the column, and add it to the list

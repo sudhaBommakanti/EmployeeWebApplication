@@ -86,6 +86,7 @@ public class CreateLibraryServlet extends HttpServlet {
 
 			rd.include(request, response);
 		} catch (Exception e) {
+			
 			throw new ServletException(e);
 		}
 
@@ -136,6 +137,11 @@ public class CreateLibraryServlet extends HttpServlet {
 		}
 
 		catch (Exception e) {
+			
+		String resData = "Library item with the book " + title + " already exists";
+		//String check = e.getMessage();
+        response.sendRedirect("createCategoryItem.html?param1="+ resData); 
+		System.out.println("check value: " + resData);
 			throw new ServletException(e);
 		}
 		out.close();

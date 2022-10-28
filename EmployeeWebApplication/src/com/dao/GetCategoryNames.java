@@ -14,14 +14,15 @@ public class GetCategoryNames {
 	
 	private static final String SELECT_CATEGORY_NAMESQUERY = "SELECT CategoryName FROM CATEGORY";
 	
-	private static final String SELECT_LIBRARY_NAMESQUERY = "SELECT Title, Author FROM LIBRARYITEM";
+	private static final String SELECT_LIBRARY_NAMESQUERY = "SELECT DISTINCT Title, Author FROM LIBRARYITEM";
 
 	static final String URL = "jdbc:sqlserver://localhost:1433;databasename=Library;integratedSecurity=true;TrustServerCertificate=true;";
 	private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static String userName = "";
 	private static String password = "";
 	
-	List<LibraryList> libraryItems = new ArrayList<LibraryList>();
+	//List<LibraryList> libraryItems = new ArrayList<LibraryList>();
+	List<LibraryList> libraryItems;
 	
 	public boolean validate() {
 		boolean status = false;
@@ -68,7 +69,9 @@ public class GetCategoryNames {
 	
 	public void check() {
 		
+		libraryItems = new ArrayList<LibraryList>();
 		
+		LibraryList list;
 
 		PrintWriter pw = null;
 
@@ -77,7 +80,7 @@ public class GetCategoryNames {
 		ResultSet rs = null;
 	
 		try {
-			LibraryList list;
+			//LibraryList list;
 			Class.forName(driver);
 			con = DriverManager.getConnection(URL, userName, password);
 

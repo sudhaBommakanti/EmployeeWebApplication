@@ -88,7 +88,13 @@ li.dropdown {
 
 #exceptionDisplay {
 	margin-left:25px;
-	align-items:center;
+	color:red;
+	
+}
+
+.excepDiv {
+	
+	text-align:center;
 }
 
 ul.data {
@@ -96,6 +102,6 @@ ul.data {
 	padding-left: 3rem;
 }
 
-table.viewTable, table.timecard th, table.timecard td {
+table.viewTable, table.viewTable th, table.viewTable td {
   border:1px solid black;
 }

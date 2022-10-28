@@ -130,19 +130,23 @@ public class CreateLibraryServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/createLibrary.jsp");
 				rd.include(request, response);
 			} else {
-				out.print("There is an error in creating data");
-				RequestDispatcher rd = request.getRequestDispatcher("home.html");
-				rd.include(request, response);
+				String resData = "There is an error in creating data";
+				//String check = e.getMessage();
+		        response.sendRedirect("createLibraryItem.html?param1="+ resData); 
+				System.out.println("check value: " + resData);
+				//out.print("There is an error in creating data");
+				//RequestDispatcher rd = request.getRequestDispatcher("home.html");
+				//rd.include(request, response);
 			}
 		}
 
 		catch (Exception e) {
 			
-		String resData = "Library item with the book " + title + " already exists";
-		//String check = e.getMessage();
-        response.sendRedirect("createCategoryItem.html?param1="+ resData); 
-		System.out.println("check value: " + resData);
-			throw new ServletException(e);
+			String resData = "Library item with the book " + " ' " + title + " ' " + " already exists";
+			//String check = e.getMessage();
+	        response.sendRedirect("createCategoryItem.html?param1="+ resData); 
+			System.out.println("check value: " + resData);
+				//throw new ServletException(e);
 		}
 		out.close();
 	}

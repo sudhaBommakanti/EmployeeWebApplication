@@ -62,21 +62,20 @@ public class CreateCategoryServlet extends HttpServlet {
 				// response.sendRedirect( "home.html");
 
 			} else {
-				out.println("<p>There is an error in creating data</p>");
-				out.print("There is an error in creating data");
-				RequestDispatcher rd = request.getRequestDispatcher("home.html");
-				rd.include(request, response);
+				String resData = "There is an error in creating data";
+				// String check = e.getMessage();
+				response.sendRedirect("createCategoryItem.html?param1=" + resData);
+				System.out.println("check value: " + resData);
+				// RequestDispatcher rd = request.getRequestDispatcher("home.html");
+				// rd.include(request, response);
 			}
 		} catch (Exception e) {
-			String excepData = "Category name " + catName + " already exists";
-			//String check = e.getMessage();
-	        response.sendRedirect("createCategoryItem.html?param1="+ excepData); 
+			String excepData = "Category name " + " ' " + catName + " ' " + " already exists";
+			// String check = e.getMessage();
+			response.sendRedirect("createCategoryItem.html?param1=" + excepData);
 			System.out.println("check value: " + excepData);
-			//response.sendRedirect("createCategoryItem.html?var1=hhhh");
-			//response.sendRedirect("createCategoryItem.html",check);
-			//response.sendRedirect(e.getMessage());
-			//out.println("<p></p>");
-			//throw new ServletException(e);
+			// response.sendRedirect(e.getMessage());
+			// throw new ServletException(e);
 
 		}
 
